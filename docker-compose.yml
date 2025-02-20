@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  eureka-server:
+    build: ./eureka-server
+    container_name: eureka-server
+    restart: always
+    ports:
+      - "8761:8761"
+    networks:
+      - stock-network
+
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    restart: always
+    environment:
+      - SERVER_PORT=8081
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+    networks:
+      - stock-network
+
+  order-service:
+    build: ./order-service
+    container_name: order-service
+    restart: always
+    environment:
+      - SERVER_PORT=8082
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+    networks:
+      - stock-network
+
+networks:
+  stock-network:
+    driver: bridge
