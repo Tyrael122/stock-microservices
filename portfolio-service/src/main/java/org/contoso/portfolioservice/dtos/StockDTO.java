@@ -1,4 +1,4 @@
-package org.contoso.portifolioservice.dtos;
+package org.contoso.portfolioservice.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

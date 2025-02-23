@@ -1,10 +1,10 @@
-package org.contoso.portifolioservice;
+package org.contoso.portfolioservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PortifolioServiceApplicationTests {
+class PortfolioServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

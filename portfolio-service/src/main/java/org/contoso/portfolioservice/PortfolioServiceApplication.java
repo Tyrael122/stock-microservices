@@ -1,13 +1,13 @@
-package org.contoso.portifolioservice;
+package org.contoso.portfolioservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PortifolioServiceApplication {
+public class PortfolioServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PortifolioServiceApplication.class, args);
+		SpringApplication.run(PortfolioServiceApplication.class, args);
 	}
 
 }

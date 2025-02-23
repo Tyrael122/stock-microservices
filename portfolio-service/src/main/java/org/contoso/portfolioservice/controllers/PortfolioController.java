@@ -1,8 +1,8 @@
-package org.contoso.portifolioservice.controllers;
+package org.contoso.portfolioservice.controllers;
 
-import org.contoso.portifolioservice.dtos.PortfolioUpdateRequestDTO;
-import org.contoso.portifolioservice.dtos.StockDTO;
-import org.contoso.portifolioservice.services.PortfolioService;
+import org.contoso.portfolioservice.dtos.PortfolioUpdateRequestDTO;
+import org.contoso.portfolioservice.dtos.StockDTO;
+import org.contoso.portfolioservice.services.PortfolioService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;

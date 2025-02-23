@@ -1,10 +1,10 @@
-package org.contoso.portifolioservice.services;
+package org.contoso.portfolioservice.services;
 
-import org.contoso.portifolioservice.dtos.PortfolioTransactionType;
-import org.contoso.portifolioservice.dtos.PortfolioUpdateRequestDTO;
-import org.contoso.portifolioservice.dtos.StockDTO;
-import org.contoso.portifolioservice.models.Stock;
-import org.contoso.portifolioservice.repositories.StockRepository;
+import org.contoso.portfolioservice.dtos.PortfolioTransactionType;
+import org.contoso.portfolioservice.dtos.PortfolioUpdateRequestDTO;
+import org.contoso.portfolioservice.dtos.StockDTO;
+import org.contoso.portfolioservice.models.Stock;
+import org.contoso.portfolioservice.repositories.StockRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +22,7 @@ public class PortfolioService {
     // Fetch stock by symbol and userId
     public StockDTO getStockBySymbol(UUID userId, String symbol) {
         Stock stock = stockRepository.findByUserIdAndSymbol(userId, symbol)
-                .orElseThrow(() -> new RuntimeException("Stock not found"));
+                .orElse(new Stock(userId, symbol, "Unknown stock", 0));
 
         return new StockDTO(stock.getSymbol(), stock.getName(), stock.getQuantity());
     }

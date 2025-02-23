@@ -1,6 +1,6 @@
-package org.contoso.portifolioservice.repositories;
+package org.contoso.portfolioservice.repositories;
 
-import org.contoso.portifolioservice.models.Stock;
+import org.contoso.portfolioservice.models.Stock;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

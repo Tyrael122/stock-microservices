@@ -1,4 +1,4 @@
-package org.contoso.portifolioservice.models;
+package org.contoso.portfolioservice.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -19,6 +19,10 @@ public class Stock {
     private String symbol;
     private String name;
     private int quantity;
+
+    public Stock() {
+
+    }
 
     public Stock(UUID userId, String symbol, String name, int quantity) {
         this.userId = userId;
